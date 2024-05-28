@@ -324,6 +324,7 @@ def test_get_token_onchain_smart_money(client: KlardaAPICollection) -> None:
     token_onchain_smart_money = client.get_token_onchain_smart_money(
         params = types.GetTokenSmartMoneyResponse(
             duration = types.DurationOnchain.H6.value,
+            chain_id = "bsc",
             sort_by=types.SortByDexTxns.BUY.value,
             sort_order=types.SortOrder.DESC.value,
             page=1,

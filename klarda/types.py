@@ -59,6 +59,26 @@ class GetTokenListReply:
             low_24h_price = data.get("low_24h_price"),
             link = data.get("link"),
         )
+    
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "symbol": self.symbol,
+            "logo_uri": self.logo_uri,
+            "price": self.price,
+            "volume": self.volume,
+            "stable_coin": self.stable_coin,
+            "circulating_supply": self.circulating_supply,
+            "total_supply": self.total_supply,
+            "market_cap": self.market_cap,
+            "rank": self.rank,
+            "networks": self.networks,
+            "token_symbol": self.token_symbol,
+            "dominance": self.dominance,
+            "high_24h_price": self.high_24h_price,
+            "low_24h_price": self.low_24h_price,
+            "link": self.link,
+        }
 
 class GetTokenListRequest:
     def __init__(
@@ -121,6 +141,19 @@ class GetTopGainersOrLosersReply:
             volume = data.get("volume"),
         )
 
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "symbol": self.symbol,
+            "market_cap": self.market_cap,
+            "token_symbol": self.token_symbol,
+            "category": self.category,
+            "short_description": self.short_description,
+            "last_24h_price": self.last_24h_price,
+            "price": self.price,
+            "volume": self.volume,
+        }
+    
 class GetTopGainersOrLosersRequest:
     def __init__(
         self,
@@ -191,6 +224,14 @@ class GetSeedFundraisingReply:
             round = data.get("round"),
         )
     
+    def to_dict(self):
+        return {
+            "amount": self.amount,
+            "name": self.name,
+            "category": self.category,
+            "round": self.round,
+        }
+    
 class GetIDOFundraisingReply:
     def __init__(
         self,
@@ -225,6 +266,18 @@ class GetIDOFundraisingReply:
             web = data.get("web"),
         )
     
+    def to_dict(self):
+        return {
+            "token_name": self.token_name,
+            "category": self.category,
+            "description": self.description,
+            "end_date": self.end_date,
+            "start_date": self.start_date,
+            "total_raise": self.total_raise,
+            "type": self.type,
+            "web": self.web,
+        }
+    
 class GetGlobalDataReply:
     def __init__(
         self,
@@ -250,6 +303,15 @@ class GetGlobalDataReply:
             eth_dominance = data.get("eth_dominance"),
             created_at = data.get("created_at")
         )
+    
+    def to_dict(self):
+        return {
+            "total_marketCap": self.total_marketCap,
+            "total_volume24h": self.total_volume24h,
+            "btc_dominance": self.btc_dominance,
+            "eth_dominance": self.eth_dominance,
+            "created_at": self.created_at,
+        }
     
 class GetGlobalProtocolListReply:
     def __init__(
@@ -279,6 +341,16 @@ class GetGlobalProtocolListReply:
             slug = data.get("slug"),
             tvl = data.get("tvl")
         )
+    
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "url": self.url,
+            "description": self.description,
+            "category": self.category,
+            "slug": self.slug,
+            "tvl": self.tvl,
+        }
     
 class GetEconomicCalendarRequest:
     def __init__(
@@ -327,6 +399,16 @@ class GetEconomicCalendarReply:
             star = data.get("star")
         )
     
+    def to_dict(self):
+        return {
+            "actual": self.actual,
+            "consensus": self.consensus,
+            "content": self.content,
+            "event_time": self.event_time,
+            "previous": self.previous,
+            "star": self.star,
+        }
+    
 class GetIndicesFutureReply:
     def __init__(
         self,
@@ -353,6 +435,15 @@ class GetIndicesFutureReply:
             price = data.get("price"),
         )
     
+    def to_dict(self):
+        return {
+            "symbol": self.symbol,
+            "change": self.change,
+            "logo_uri": self.logo_uri,
+            "name": self.name,
+            "price": self.price,
+        }
+    
 class GetIndicesFutureOrCommoditiesReply:
     def __init__(
         self,
@@ -378,6 +469,15 @@ class GetIndicesFutureOrCommoditiesReply:
             name = data.get("name"),
             price = data.get("price"),
         )
+    
+    def to_dict(self):
+        return {
+            "symbol": self.symbol,
+            "change": self.change,
+            "logo_uri": self.logo_uri,
+            "name": self.name,
+            "price": self.price,
+        }
 
 class GetSearchByQueriesRequest:
     def __init__(
@@ -432,6 +532,17 @@ class GetSearchByQueriesByNewsReply:
             title = data.get("title")
         )
     
+    def to_dict(self):
+        return {
+            "link": self.link,
+            "content": self.content,
+            "creator": self.creator,
+            "published_at": self.published_at,
+            "source": self.source,
+            "thumbnail": self.thumbnail,
+            "title": self.title,
+        }
+    
 class GetSearchByQueriesByTokenReply:
     def __init__(
         self,
@@ -473,6 +584,20 @@ class GetSearchByQueriesByTokenReply:
             token_symbol = data.get("token_symbol")
         )
     
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "symbol": self.symbol,
+            "category": self.category,
+            "short_description": self.short_description,
+            "logo_uri": self.logo_uri,
+            "last_24h_price": self.last_24h_price,
+            "price": self.price,
+            "volume": self.volume,
+            "market_cap": self.market_cap,
+            "token_symbol": self.token_symbol,
+        }
+    
 class GetSearchByQueriesByProtocolReply:
     def __init__(
         self,
@@ -495,6 +620,14 @@ class GetSearchByQueriesByProtocolReply:
             change_1d = data.get("change_1d"),
             change_7d = data.get("change_7d"),
         )
+    
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "tvl": self.tvl,
+            "change_1d": self.change_1d,
+            "change_7d": self.change_7d
+        }
     
 class GetSearchByQueriesBySignalReply:
     def __init__(
@@ -522,6 +655,15 @@ class GetSearchByQueriesBySignalReply:
             signal_time = data.get("signal_time"),
         )
 
+    def to_dict(self):
+        return {
+            "symbol": self.symbol,
+            "name": self.name,
+            "signal": self.signal,
+            "buy_sell": self.buy_sell,
+            "signal_time": self.signal_time
+        }
+    
 class GetTokenTechnicalIndicatorsRequest:
     def __init__(
         self,
@@ -651,6 +793,15 @@ class GetTokenTechnicalIndicatorsReply:
             statistics=data.get("statistics"),
             text_summary=[TextSummary.from_dict(item) for item in data.get("text_summary", [])]
         )
+    
+    def to_dict(self):
+        return {
+            "details": self.details,
+            "status": self.status,
+            "value": self.value,
+            "statistics": self.statistics,
+            "text_summary": self.text_summary
+        }
         
 class GetTokenTechnicalIndicatorsReply:
     def __init__(
@@ -684,6 +835,17 @@ class GetTokenTechnicalIndicatorsReply:
             title = data.get("title")
         )
 
+    def to_dict(self):
+        return {
+            "link": self.link,
+            "content": self.content,
+            "creator": self.creator,
+            "published_at": self.published_at,
+            "source": self.source,
+            "thumbnail": self.thumbnail,
+            "title": self.title
+        }
+    
 class GetTokenIdRequest:
     def __init__(
         self,
@@ -795,6 +957,23 @@ class GetTokenMetadataProfileReply:
             networks=networks,
             token_symbol=data.get("token_symbol")
         )
+    
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "symbol": self.symbol,
+            "category": self.category,
+            "short_description": self.short_description,
+            "description": self.description,
+            "logo_uri": self.logo_uri,
+            "medias": self.medias,
+            "rank": self.rank,
+            "rank_label": self.rank_label,
+            "klarda_score": self.klarda_score,
+            "sub_id": self.sub_id,
+            "networks": self.networks,
+            "token_symbol": self.token_symbol,
+        }
         
 class FundRaising:
     def __init__(self, type: str, tokens_for_sale: int, lookup_period: str, price: float, total_raise: float, start: str = None, exchange_key: str = None):
@@ -838,6 +1017,15 @@ class GetTokenMetadataFundraisingReply:
             token_symbol=data.get("token_symbol")
         )
     
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "symbol": self.symbol,
+            "vc_ids": self.vc_ids,
+            "fund_raisings": self.fund_raisings,
+            "token_symbol": self.token_symbol,
+        }
+    
 class Tokenomic:
     def __init__(self, title: str, percent: float):
         self.title = title
@@ -867,6 +1055,15 @@ class GetTokenMetadataTokenomicsReply:
             tokenomics=tokenomics,
             token_symbol=data.get("token_symbol")
         )
+    
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "symbol": self.symbol,
+            "tokenomics": self.tokenomics,
+            "token_symbol": self.token_symbol,
+        }
+    
     
 class LowHighPrice:
     def __init__(self, timestamp: str, price: float):
@@ -999,6 +1196,14 @@ class GetTokenMetadataWithOnchainReply:
             holder_insights=holder_insights
         )
 
+    def to_dict(self):
+        return {
+            "token": self.token,
+            "smart_money": self.smart_money,
+            "cex_flow": self.cex_flow,
+            "holder_insights": self.holder_insights,
+        }
+    
 class GetTokenExchangeTradeBySymbolReply:
     def __init__(
         self,
@@ -1029,6 +1234,17 @@ class GetTokenExchangeTradeBySymbolReply:
             change = data.get("change"),
             change_percent = data.get("change_percent")
         )
+
+    def to_dict(self):
+        return {
+            "trade_symbol": self.trade_symbol,
+            "current_price": self.current_price,
+            "url": self.url,
+            "exchange_name": self.exchange_name,
+            "volume_24h": self.volume_24h,
+            "change": self.change,
+            "change_percent": self.change_percent,
+        }
     
 class GetTokenPriceInformationBySymbolReply:
     def __init__(
@@ -1070,6 +1286,19 @@ class GetTokenPriceInformationBySymbolReply:
             token_symbol = data.get("token_symbol")
         )
     
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "symbol": self.symbol,
+            "last_24h_price": self.last_24h_price,
+            "price": self.price,
+            "low_price": self.low_price,
+            "high_price": self.high_price,
+            "volume": self.volume,
+            "market_cap": self.market_cap,
+            "token_symbol": self.token_symbol,
+        }
+    
 class GetTokenPriceBySymbolReply:
     def __init__(
         self,
@@ -1089,6 +1318,13 @@ class GetTokenPriceBySymbolReply:
             token_symbol = data.get("token_symbol")
         )
 
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "price": self.price,
+            "token_symbol": self.token_symbol,
+        }
+    
 class GetPriceHistoryByTimestampRequest:
     def __init__(
         self,
@@ -1129,6 +1365,16 @@ class GetPriceHistoryByTimestampReply:
             volume = data.get("volume")
         )
     
+    def to_dict(self):
+        return {
+            "stored_time": self.stored_time,
+            "symbol": self.symbol,
+            "market_cap": self.market_cap,
+            "price": self.price,
+            "volume": self.volume,
+        }
+    
+
 class GetPriceHistoryByTimerangeRequest:
     def __init__(
         self,
@@ -1193,6 +1439,16 @@ class GetPriceOHLCVReply:
             stored_time = data.get("stored_time")
         )
     
+    def to_dict(self):
+        return {
+            "open": self.open,
+            "high": self.high,
+            "low": self.low,
+            "close": self.close,
+            "volume": self.volume,
+            "stored_time": self.stored_time,
+        }
+    
 class GetTokenIdAndChainIdRequest:
     def __init__(
         self,
@@ -1248,6 +1504,14 @@ class GetTokenHolderHistoryReply:
             stored_time = data.get("stored_time"),
         )
     
+    def to_dict(self):
+        return {
+            "symbol": self.symbol,
+            "chain_id": self.chain_id,
+            "total_holder": self.total_holder,
+            "stored_time": self.stored_time,
+        }
+    
 class GetTokenHolderDistributionReply:
     def __init__(
         self,
@@ -1287,6 +1551,20 @@ class GetTokenHolderDistributionReply:
             h_1000000 = data.get("h_1000000"),
             stored_time = data.get("stored_time"),
         )
+    
+    def to_dict(self):
+        return {
+            "symbol": self.symbol,
+            "chain_id": self.chain_id,
+            "h_0_10": self.h_0_10,
+            "h_10_100": self.h_10_100,
+            "h_100_1000": self.h_100_1000,
+            "h_1000_10000": self.h_1000_10000,
+            "h_10000_100000": self.h_10000_100000,
+            "h_100000_1000000": self.h_100000_1000000,
+            "h_1000000": self.h_1000000,
+            "stored_time": self.stored_time
+        }
 
 class GetTokenLiquidityRequest:
     def __init__(
@@ -1351,6 +1629,14 @@ class GetTokenLiquidityReply:
             liquidity=liquidity,
         )
     
+    def to_dict(self):
+        return {
+            "chainId": self.chainId,
+            "baseToken": self.baseToken,
+            "quoteToken": self.quoteToken,
+            "liquidity": self.liquidity
+        }
+    
 class GetTokenOnchainSummaryReply:
     def __init__(self, holder: int, liquidity: float, cex_dex: float, trades: int, volume: float):
         self.holder = holder
@@ -1368,7 +1654,15 @@ class GetTokenOnchainSummaryReply:
             trades=data.get("trades"),
             volume=data.get("volume")
         )
-
+    
+    def to_dict(self):
+        return {
+            "holder": self.holder,
+            "liquidity": self.liquidity,
+            "cex_dex": self.cex_dex,
+            "trades": self.trades,
+            "volume": self.volume
+        }
     
 class TransactionCounts:
     def __init__(self, buys: int, sells: int):
@@ -1423,6 +1717,14 @@ class GetTokenOnchainSwapCountsReply:
             txns=txns
         )
     
+    def to_dict(self):
+        return {
+            "chainId": self.chainId,
+            "baseToken": self.baseToken,
+            "quoteToken": self.quoteToken,
+            "txns": self.txns,
+        }
+
 class VolumeOnchain:
     def __init__(self, m5: float, h1: float, h6: float, h24: float):
         self.m5 = m5
@@ -1502,6 +1804,20 @@ class GetTokenSmartMoneyReply:
             liquidity=liquidity
         )
     
+    def to_dict(self):
+        return {
+            "chainId": self.chainId,
+            "baseToken": self.baseToken,
+            "quoteToken": self.quoteToken,
+            "baseTokenSlug": self.baseTokenSlug,
+            "quoteTokenSlug": self.quoteTokenSlug,
+            "pairAddress": self.pairAddress,
+            "priceUsd": self.priceUsd,
+            "inds": self.inds,
+            "volume": self.volume,
+            "liquidity": self.liquidity,
+        }
+    
 class GetTokenOnchainCEXFlowResponse:
     def __init__(
         self,
@@ -1557,6 +1873,12 @@ class GetTokenOnchainCEXFlowReply:
             value=data.get("value")
         )
     
+    def to_dict(self):
+        return {
+            "token": self.token,
+            "value": self.value
+        }
+    
 class GetSuspiciousVolumeResponse(GetTokenSmartMoneyResponse):
     def __init__(
         self,
@@ -1601,6 +1923,16 @@ class GetSuspiciousVolumeReply:
             baseToken = baseToken
         ) 
 
+    def to_dict(self):
+        return {
+            "baseTokenSlug": self.baseTokenSlug,
+            "priceUsd": self.priceUsd,
+            "volume": self.volume,
+            "volume_s": self.volume_s,
+            "liquidity": self.liquidity,
+            "baseToken": self.baseToken
+        }
+    
 class GetDexGainersReply:
     def __init__(self, baseTokenSlug: str, priceUsd: float, volume: VolumeOnchain, volume_s: VolumeOnchain, 
                  liquidity: Liquidity, fdv: float, txns: Txns, baseToken: TokenInfo):
@@ -1632,6 +1964,18 @@ class GetDexGainersReply:
             baseToken = baseToken
         )
 
+    def to_dict(self):
+        return {
+            "baseTokenSlug": self.baseTokenSlug,
+            "priceUsd": self.priceUsd,
+            "volume": self.volume,
+            "volume_s": self.volume_s,
+            "liquidity": self.liquidity,
+            "fdv": self.fdv,
+            "txns": self.txns,
+            "baseToken": self.baseToken
+        }
+    
 class GetTokenAmountByExchangeResponse:
     def __init__(
         self,
@@ -1684,6 +2028,17 @@ class GetExchangeListReply:
             foundation_year=data.get("foundation_year")
         )
 
+    def to_dict(self):
+        return {
+            "key": self.key,
+            "name": self.name,
+            "pairs_count": self.pairs_count,
+            "medias": self.medias,
+            "description": self.description,
+            "country": self.country,
+            "foundation_year": self.foundation_year,
+        }
+    
 class GetExchangeBalanceDistributionReply:
     def __init__(self, name: str, valueUsd: float):
         self.name = name
@@ -1695,6 +2050,12 @@ class GetExchangeBalanceDistributionReply:
             name=data.get("name"),
             valueUsd=data.get("valueUsd")
         )
+    
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "valueUsd": self.valueUsd,
+        }
     
 class GetTokenAmountByExchangeReply:
     def __init__(self, symbol: str, chain_id: str, exchange_key: str,
@@ -1717,6 +2078,16 @@ class GetTokenAmountByExchangeReply:
             amount=data.get("amount"),
             stored_time=data.get("stored_time")
         )
+    
+    def to_dict(self):
+        return {
+            "symbol": self.symbol,
+            "chain_id": self.chain_id,
+            "exchange_key": self.exchange_key,
+            "exchange_name": self.exchange_name,
+            "amount": self.amount,
+            "stored_time": self.stored_time,
+        }
 
 class Metadata:
     def __init__(self, blockchain: str, contractAddress: str, tokenId: str, contractType: str, collectionName: str, collectionSymbol: str):
@@ -1808,6 +2179,12 @@ class GetNFTMetadataReply:
             attributes=attributes
         )
 
+    def to_dict(self):
+        return {
+            "metadata": self.metadata,
+            "attributes": self.attributes,
+        }
+    
 class GetNFTHolderResponse:
     def __init__(self, address: str, chain_id: Blockchain):
         self.address = address
@@ -1828,6 +2205,11 @@ class GetNFTHolderReply:
     def from_dict(cls, data):
         holders = data.get("holders", [])
         return cls(holders=holders)
+    
+    def to_dict(self):
+        return {
+            "holders": self.holders,
+        }
     
 class Blockchain(Enum):
     Arbitrum = "arbitrum"
@@ -1906,6 +2288,7 @@ class SearchType(Enum):
     SIGNAL = "signal"
 
 class CandleDuration(Enum):
+    M5 = "5M"
     M15 = "15M"
     M30 = "30M"
     H1 = "1H"

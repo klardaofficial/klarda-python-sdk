@@ -21,7 +21,7 @@ class KlardaProvider():
             params = params.to_dict()
         params["api_key"] = self.api_key
         response = requests.get(self.endpoint_uri + method_url, params=params).json()
-        reply = [reply.from_dict(**item) for item in response["data"]]
+        reply = [reply.from_dict(**item).to_dict() for item in response["data"]]
         if response.get("error"):
             raise APIError(response["error"])
         if len(response["data"]) == 0:
@@ -33,7 +33,7 @@ class KlardaProvider():
             params = params.to_dict()
         params["api_key"] = self.api_key
         response = requests.get(self.endpoint_uri + method_url, params=params).json()
-        reply = [reply.from_dict(item) for item in response["data"]["result"]]
+        reply = [reply.from_dict(item).to_dict() for item in response["data"]["result"]]
         if response.get("error"):
             raise APIError(response["error"])
         if len(response["data"]["result"]) == 0:
